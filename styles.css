@@ -1,0 +1,205 @@
+:root {
+    --white: #fff;
+    --grey: #8D8D99;
+    --button-hover: #02799D;
+
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, button {
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body { 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    background-image: url(./assets/mountains-universe-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
+}
+
+header {
+    width: 100%;
+    height: 12.2rem;
+    padding: 4rem 0 4rem 7.2rem;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+header img {
+    height: 4.2rem;
+}
+
+nav {
+    display: flex;
+    gap: 3.2rem;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--grey);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2.3rem;
+}
+
+#app {
+    flex: 1;
+}
+
+#app .home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+#app .home h1 {
+    font-size: 4.8rem;
+    line-height: 6rem;
+    margin-top: 17.2rem;
+    margin-bottom: 2.4rem;
+}
+
+#app .home button {
+    padding: 1.2rem 3.2rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--white);
+    color: var(--white);
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#app .home button:hover {
+    color: var(--button-hover);
+    background-color: var(--white);
+    border: none;
+    transform: scale(1.1);
+}
+
+#app .universe,
+#app .exploration {
+    width: 100%;
+    max-width: 64rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10.2rem;
+}
+
+#app .universe h1,
+#app .exploration h1 {
+    font-size: 4.8rem;
+    line-height: 6rem;
+    margin-top: 6.3rem;
+    margin-bottom: 1.6rem;
+    font-size: 4.8rem;
+}
+
+#app .universe p,
+#app .exploration p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+
+@-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+  
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 50%;
+    }
+
+    header {
+        padding-left: 5.4rem;
+    }
+
+    #app .universe,
+    #app .exploration {
+        max-width: 50rem;
+        margin-left: 7.2rem;
+    }
+
+}
+
+@media (max-width: 425px) {
+    :root {
+        font-size: 40%;
+    }
+    header {
+        padding-left: 3.4rem;
+    }
+
+    nav {
+        gap: 2.2rem;
+    }
+
+    #app .universe,
+    #app .exploration {
+        max-width: 40rem;
+        margin-left: 5.2rem;
+    }
+}
